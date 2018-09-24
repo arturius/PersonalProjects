@@ -80,6 +80,7 @@ int main(){
                     if (i ==0 ||j == 0||i == (mapYMax-1)||j ==(mapXMax-1)){
                         temp.xCord = j;
                         temp.yCord = i;
+                        temp.pass = 0;
                         makeMapPoint(fp,mapXMax,mapYMax,temp);
                     }
                 }

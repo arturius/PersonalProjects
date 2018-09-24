@@ -48,13 +48,16 @@ void pathFind(int startX, int startY, int targetX,int targetY, FILE *fpMap);
 int relLength(int xPos, int yPos, int targetX,int targetY);
 pathNode *newNode(int xPos, int yPos, int targetX, int targetY, pathNode *origin, int travDist);
 pathNode *popNode(pathNode **list);/*removes node from front of the list*/
-pathNode *checkNode (int xPos, int yPos, pathNode **list);/*checks to see if a node with given coridnartes exists*/
-void compareNodes(pathNode *foundNode, int travDist, pathNode *origin);/*checks to see if a new origin will shorten the length of total distance travleed and will replace the origin if it does*/
-void sortNodes(pathNode *changedNode, pathNode **list);/*compares a new or changed nodes total distance and places it in the corect positon in the linked list*/
-void addNode(pathNode **list, pathNode *toAdd);
+pathNode *checkNode (int xPos, int yPos, pathNode **givenList);/*checks to see if a node with given coridnartes exists*/
+void compareNodes(pathNode *foundNode, int travDist, pathNode *origin, pathNode **givenList);/*checks to see if a new origin will shorten the length of total distance travleed and will replace the origin if it does*/
+void sortNodes(pathNode *changedNode, pathNode **givenList);/*compares a new or changed nodes total distance and places it in the corect positon in the linked list*/
+void addNode(pathNode **giveList, pathNode *toAdd);
 void deleteList (pathNode **list);
 void deleteNode (pathNode **toDelete);
 
+void showPath(pathNode **givenList, FILE *fp, int xMax, int yMax);
+
+void showNodes(pathNode **givenList);
 
 #endif
 
